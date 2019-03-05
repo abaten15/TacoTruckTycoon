@@ -18,6 +18,7 @@
 		E50F78462228AD0800C2B2D8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E50F78452228AD0800C2B2D8 /* main.m */; };
 		E50F78502228AD0800C2B2D8 /* Taco_Truck_TycoonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E50F784F2228AD0800C2B2D8 /* Taco_Truck_TycoonTests.m */; };
 		E50F785B2228AD0800C2B2D8 /* Taco_Truck_TycoonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E50F785A2228AD0800C2B2D8 /* Taco_Truck_TycoonUITests.m */; };
+		E5FED370222F3E7200055796 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FED36F222F3E7200055796 /* Player.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		E50F78562228AD0800C2B2D8 /* Taco Truck TycoonUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Taco Truck TycoonUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50F785A2228AD0800C2B2D8 /* Taco_Truck_TycoonUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Taco_Truck_TycoonUITests.m; sourceTree = "<group>"; };
 		E50F785C2228AD0800C2B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5FED36E222F3DD300055796 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		E5FED36F222F3E7200055796 /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				E50F78302228AD0800C2B2D8 /* AppDelegate.m */,
 				E50F78322228AD0800C2B2D8 /* GameScene.sks */,
 				E50F78342228AD0800C2B2D8 /* Actions.sks */,
+				E5FED36E222F3DD300055796 /* Player.h */,
+				E5FED36F222F3E7200055796 /* Player.m */,
 				E50F78362228AD0800C2B2D8 /* GameScene.h */,
 				E50F78372228AD0800C2B2D8 /* GameScene.m */,
 				E50F78392228AD0800C2B2D8 /* GameViewController.h */,
@@ -282,6 +287,7 @@
 				E50F783B2228AD0800C2B2D8 /* GameViewController.m in Sources */,
 				E50F78462228AD0800C2B2D8 /* main.m in Sources */,
 				E50F78312228AD0800C2B2D8 /* AppDelegate.m in Sources */,
+				E5FED370222F3E7200055796 /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

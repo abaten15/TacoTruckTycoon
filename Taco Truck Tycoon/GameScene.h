@@ -13,5 +13,8 @@
 
 @property (nonatomic) NSMutableArray<GKEntity *> *entities;
 @property (nonatomic) NSMutableDictionary<NSString*, GKGraph *> *graphs;
+@property (nonatomic) CGFloat lastUpdateTime;
+
+@property (nonatomic) SKSpriteNode *player;
 
 @end
