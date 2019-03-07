@@ -18,7 +18,7 @@
 	self.position = CGPointMake(0, 0);
 	[self setSize:self.size];
 	[self setPosition:self.position];
-	self.speed = 10;
+	self.speed = 12;
 }
 
 - (void) goTo:(CGPoint)point {

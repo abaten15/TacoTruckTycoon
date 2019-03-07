@@ -24,7 +24,17 @@
 @property (nonatomic) Player *player;
 
 // Buttons
+@property (nonatomic) SKSpriteNode *tortillaButton;
+- (void) tortillaButtonClicked;
+@property (nonatomic) SKSpriteNode *beefButton;
+- (void) beefButtonClicked;
 @property (nonatomic) SKSpriteNode *lettuceButton;
 - (void) lettuceButtonClicked;
+@property (nonatomic) SKSpriteNode *tomatoeButton;
+- (void) tomatoeButtonClicked;
+@property (nonatomic) SKSpriteNode *sauceButton;
+- (void) sauceButtonClicked;
+@property (nonatomic) SKSpriteNode *customerButton;
+- (void) customerButtonClicked;
 
 @end

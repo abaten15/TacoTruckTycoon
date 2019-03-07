@@ -12,7 +12,11 @@
 #import <SpriteKit/SpriteKit.h>
 #import <GameplayKit/GameplayKit.h>
 
+#define PLAYER_GOTO_TORTILLA CGPointMake(-253, -15)
+#define PLAYER_GOTO_BEEF CGPointMake(-90, -15)
 #define PLAYER_GOTO_LETTUCE CGPointMake(45, -15)
+#define PLAYER_GOTO_TOMATOE CGPointMake(185, -15)
+#define PLAYER_GOTO_SAUCE CGPointMake(292, -15)
 
 @interface Player: SKSpriteNode
 
