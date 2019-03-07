@@ -15,13 +15,30 @@
 
 - (void)sceneDidLoad {
     // Setup your scene here
-	_player = [SKSpriteNode spriteNodeWithImageNamed:@"Player"];
+    int width = self.size.width;
+	int height = self.size.height;
+	
+	self.window = [SKSpriteNode spriteNodeWithTexture:NULL size:CGSizeMake(1000, 1000)];
+	[self.window setPosition:CGPointMake(0, 0)];
+	[self addChild:self.window];
+	
+	_background = [SKSpriteNode spriteNodeWithImageNamed:@"Background"];
+	[_background setPosition:CGPointMake(0, 0)];
+	[_background setSize:CGSizeMake(width, 425)];
+	[self addChild:_background];
+	
+	_player = [Player spriteNodeWithImageNamed:@"Player"];
+	[_player onCreatePlayer];
 	[self addChild:_player];
+	
+	_lettuceButton = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithWhite:1 alpha:0.0] size:CGSizeMake(100, 80)];
+	[_lettuceButton setPosition:CGPointMake(45, -140)];
+	[self addChild:_lettuceButton];
+	
 }
 
 
 - (void)touchDownAtPoint:(CGPoint)pos {
-
 }
 
 - (void)touchMovedToPoint:(CGPoint)pos {
@@ -33,16 +50,22 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *t in touches) {[self touchDownAtPoint:[t locationInNode:self]];}
+	UITouch *touch = [touches anyObject];
+	CGPoint point = [touch locationInNode:self.window];
+	if ([_lettuceButton containsPoint:point]) {
+		[self lettuceButtonClicked];
+	}
+	
+	NSLog(@"x: %d, y: %d\n", (int)point.x, (int)point.y);
 }
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event{
-    for (UITouch *t in touches) {[self touchMovedToPoint:[t locationInNode:self]];}
+
 }
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *t in touches) {[self touchUpAtPoint:[t locationInNode:self]];}
+
 }
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
-    for (UITouch *t in touches) {[self touchUpAtPoint:[t locationInNode:self]];}
+
 }
 
 
@@ -62,6 +85,10 @@
         [entity updateWithDeltaTime:dt];
     }
 	
+}
+
+- (void)lettuceButtonClicked {
+	[_player goTo:PLAYER_GOTO_LETTUCE];
 }
 
 @end

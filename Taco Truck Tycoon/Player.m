@@ -14,10 +14,19 @@
 }
 
 - (void) onCreatePlayer {
-	self.size = CGSizeMake(200, 200);
+	self.size = CGSizeMake(100, 100);
 	self.position = CGPointMake(0, 0);
 	[self setSize:self.size];
 	[self setPosition:self.position];
+	self.speed = 10;
+}
+
+- (void) goTo:(CGPoint)point {
+	CGFloat distanceX = self.position.x - point.x;
+	CGFloat distanceY = self.position.y - point.y;
+	CGFloat distance = sqrt(distanceX * distanceX + distanceY * distanceY);
+	SKAction *action = [SKAction moveTo:point duration:distance/self.speed];
+	[self runAction:action];
 }
 
 @end

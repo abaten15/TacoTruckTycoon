@@ -9,12 +9,22 @@
 #import <SpriteKit/SpriteKit.h>
 #import <GameplayKit/GameplayKit.h>
 
+#import "Player.h"
+
 @interface GameScene : SKScene
 
 @property (nonatomic) NSMutableArray<GKEntity *> *entities;
 @property (nonatomic) NSMutableDictionary<NSString*, GKGraph *> *graphs;
 @property (nonatomic) CGFloat lastUpdateTime;
 
-@property (nonatomic) SKSpriteNode *player;
+@property (nonatomic) SKSpriteNode *window;
+
+@property (nonatomic) SKSpriteNode *background;
+
+@property (nonatomic) Player *player;
+
+// Buttons
+@property (nonatomic) SKSpriteNode *lettuceButton;
+- (void) lettuceButtonClicked;
 
 @end

@@ -12,12 +12,18 @@
 #import <SpriteKit/SpriteKit.h>
 #import <GameplayKit/GameplayKit.h>
 
+#define PLAYER_GOTO_LETTUCE CGPointMake(45, -15)
+
 @interface Player: SKSpriteNode
 
-@property (nonatomic) CGPoint position;
-@property (nonatomic) CGSize size;
+@property (nonatomic) CGPoint playerPosition;
+@property (nonatomic) CGSize playerSize;
 
 - (void) onCreatePlayer;
+
+@property (nonatomic) CGFloat playerSpeed;
+
+- (void) goTo:(CGPoint)point;
 
 @end
 
