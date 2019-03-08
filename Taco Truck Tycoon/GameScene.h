@@ -36,5 +36,26 @@
 - (void) sauceButtonClicked;
 @property (nonatomic) SKSpriteNode *customerButton;
 - (void) customerButtonClicked;
+@property (nonatomic) SKSpriteNode *garbageButton;
+- (void) garbageButtonClicked;
+
+@property (nonatomic) NSMutableArray *customers;
+@property (nonatomic) CGFloat lastCustomerUpdate;
+@property (nonatomic) CGFloat customerUpdateCooldown;
+- (void) addCustomer;
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+

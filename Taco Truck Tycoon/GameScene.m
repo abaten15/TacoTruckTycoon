@@ -8,6 +8,7 @@
 
 #import "GameScene.h"
 #import "Player.h"
+#import "Customer.h"
 
 @implementation GameScene {
 
@@ -27,7 +28,7 @@
 	[_background setSize:CGSizeMake(width, 425)];
 	[self addChild:_background];
 	
-	_player = [Player spriteNodeWithImageNamed:@"Player"];
+	_player = [Player spriteNodeWithImageNamed:@"TacoTruckWorker"];
 	[_player onCreatePlayer];
 	[self addChild:_player];
 	
@@ -50,6 +51,17 @@
 	_sauceButton = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithWhite:1 alpha:0.0] size:CGSizeMake(50, 80)];
 	[_sauceButton setPosition:CGPointMake(292, -140)];
 	[self addChild:_sauceButton];
+	
+	_customerButton = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithWhite:1 alpha:0.0] size:CGSizeMake(140, 120)];
+	[_customerButton setPosition:CGPointMake(-18, 124)];
+	[self addChild:_customerButton];
+	
+	_garbageButton = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithWhite:1.0 alpha:0.0] size:CGSizeMake(40, 40)];
+	[_garbageButton setPosition:CGPointMake(-335, 35)];
+	[self addChild:_garbageButton];
+	
+	// Customers
+	_customerUpdateCooldown = 2.0;
 	
 }
 
@@ -78,6 +90,10 @@
 		[self tomatoeButtonClicked];
 	} else if ([_sauceButton containsPoint:point]) {
 		[self sauceButtonClicked];
+	} else if ([_customerButton containsPoint:point]) {
+		[self customerButtonClicked];
+	} else if ([_garbageButton containsPoint:point]) {
+		[self garbageButtonClicked];
 	}
 	
 	NSLog(@"x: %d, y: %d\n", (int)point.x, (int)point.y);
@@ -99,6 +115,7 @@
     // Initialize _lastUpdateTime if it has not already been
     if (_lastUpdateTime == 0) {
         _lastUpdateTime = currentTime;
+        _lastCustomerUpdate = currentTime;
     }
     
     // Calculate time since last update
@@ -109,28 +126,55 @@
         [entity updateWithDeltaTime:dt];
     }
 	
+    if (currentTime - _lastCustomerUpdate >= _customerUpdateCooldown) {
+    	[self addCustomer];
+	}
+	
 }
 
 // Buttons
 
 - (void)tortillaButtonClicked {
-	[_player goTo:PLAYER_GOTO_TORTILLA];
+	[_player goTo:PLAYER_GOTO_TORTILLA looking:PLAYER_DOWN withAction:CREATE_TACO];
 }
 
 - (void)beefButtonClicked {
-	[_player goTo:PLAYER_GOTO_BEEF];
+	[_player goTo:PLAYER_GOTO_BEEF looking:PLAYER_DOWN withAction:ADD_BEEF];
 }
 
 - (void)lettuceButtonClicked {
-	[_player goTo:PLAYER_GOTO_LETTUCE];
+	[_player goTo:PLAYER_GOTO_LETTUCE looking:PLAYER_DOWN withAction:ADD_LETTUCE];
 }
 
 - (void)tomatoeButtonClicked {
-	[_player goTo:PLAYER_GOTO_TOMATOE];
+	[_player goTo:PLAYER_GOTO_TOMATOE looking:PLAYER_DOWN withAction:ADD_TOMATOE];
 }
 
 - (void)sauceButtonClicked {
-	[_player goTo:PLAYER_GOTO_SAUCE];
+	[_player goTo:PLAYER_GOTO_SAUCE looking:PLAYER_DOWN withAction:ADD_SAUCE];
+}
+
+- (void) customerButtonClicked {
+	[_player goTo:PLAYER_GOTO_CUSTOMER looking:PLAYER_UP withAction:SELL_TO_CUSTOMER];
+}
+
+- (void) garbageButtonClicked {
+	[_player goTo:PLAYER_GOTO_GARBAGE looking:PLAYER_LEFT withAction:TRASH_TACO];
+}
+
+// Customers
+- (void) addCustomer {
+	int customerImage = arc4random_uniform(3);
+	Customer *newCustomer;
+	if (customerImage == 0) {
+		newCustomer = [Customer spriteNodeWithImageNamed:@"Customer"];
+	}
+	int tacoOrder = arc4random_uniform(6);
+	if (tacoOrder >= 0) {
+		[newCustomer setIngredients:STANDARD_TACO];
+	}
+	
+	
 }
 
 @end
