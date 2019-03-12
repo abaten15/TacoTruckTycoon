@@ -18,12 +18,21 @@ typedef enum : NSUInteger {
     SAUCE,
 } Ingredients;
 
-#define STANDARD_TACO @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE]]
-#define EVERYTHING_TACO @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE], [NSNumber numberWithInteger:SAUCE]]
-#define MEATLOVERS_TACO @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:SAUCE]]
-#define SAUCEY_TACO @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:SAUCE]]
-#define VEGGIE_TACO @[[NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE], [NSNumber numberWithInteger:SAUCE]]
-#define VEGAN_TACO @[[NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE]]
+#define STANDARD_TACO_ARRAY @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE]]
+#define EVERYTHING_TACO_ARRAY @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE], [NSNumber numberWithInteger:SAUCE]]
+#define MEATLOVERS_TACO_ARRAY @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:SAUCE]]
+#define SAUCEY_TACO_ARRAY @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:SAUCE]]
+#define VEGGIE_TACO_ARRAY @[[NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE], [NSNumber numberWithInteger:SAUCE]]
+#define VEGAN_TACO_ARRY @[[NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE]]
+
+typedef enum : NSUInteger {
+    STANDARD_TACO,
+    EVERYTHING_TACO,
+    MEATLOVERS_TACO,
+    SAUCEY_TACO,
+    VEGGIE_TACO,
+    VEGAN_TACO,
+} TacoType;
 
 @interface Customer : SKSpriteNode
 
