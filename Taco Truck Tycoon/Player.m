@@ -39,6 +39,8 @@
 		actionAtDestination = [SKAction performSelector:@selector(addTomatoeToTaco) onTarget:self];
 	} else if (playerAction == ADD_SAUCE) {
 		actionAtDestination = [SKAction performSelector:@selector(addSauceToTaco) onTarget:self];
+	} else if (playerAction == SELL_TO_CUSTOMER) {
+		actionAtDestination = [SKAction performSelector:@selector(sellTacoToCustomer) onTarget:self];
 	}
 	if (actionAtDestination != NULL) {
 		SKAction *completePlayerAction = [SKAction sequence:@[action, actionAtDestination]];
@@ -90,6 +92,12 @@
 - (void) addSauceToTaco {
 	if (_taco != NULL) {
 		[_taco addSauce];
+	}
+}
+
+- (void) sellTacoToCustomer {
+	if (_taco != NULL && ) {
+		[]
 	}
 }
 

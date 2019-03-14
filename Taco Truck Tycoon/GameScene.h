@@ -10,6 +10,8 @@
 #import <GameplayKit/GameplayKit.h>
 
 #import "Player.h"
+#import "Customer.h"
+#import "CustomerLine.h"
 
 @interface GameScene : SKScene
 
@@ -39,7 +41,7 @@
 @property (nonatomic) SKSpriteNode *garbageButton;
 - (void) garbageButtonClicked;
 
-@property (nonatomic) NSMutableArray *customers;
+@property (nonatomic) CustomerLine *customerLine;
 @property (nonatomic) CGFloat lastCustomerUpdate;
 @property (nonatomic) CGFloat customerUpdateCooldown;
 - (void) addCustomer;

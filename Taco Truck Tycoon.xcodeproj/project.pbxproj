@@ -20,6 +20,7 @@
 		E50F785B2228AD0800C2B2D8 /* Taco_Truck_TycoonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E50F785A2228AD0800C2B2D8 /* Taco_Truck_TycoonUITests.m */; };
 		E57D41E42231AC930057E995 /* Taco.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D41E32231AC930057E995 /* Taco.m */; };
 		E57D41E6223219220057E995 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D41E5223219220057E995 /* Customer.m */; };
+		E5FDF47222386D0D00774703 /* CustomerLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FDF47122386D0D00774703 /* CustomerLine.m */; };
 		E5FED370222F3E7200055796 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FED36F222F3E7200055796 /* Player.m */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,8 @@
 		E57D41E32231AC930057E995 /* Taco.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Taco.m; sourceTree = "<group>"; };
 		E57D41E5223219220057E995 /* Customer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		E57D41E72232192E0057E995 /* Customer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		E5FDF47022386CFC00774703 /* CustomerLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerLine.h; sourceTree = "<group>"; };
+		E5FDF47122386D0D00774703 /* CustomerLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerLine.m; sourceTree = "<group>"; };
 		E5FED36E222F3DD300055796 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
 		E5FED36F222F3E7200055796 /* Player.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +124,8 @@
 				E50F78302228AD0800C2B2D8 /* AppDelegate.m */,
 				E50F78322228AD0800C2B2D8 /* GameScene.sks */,
 				E50F78342228AD0800C2B2D8 /* Actions.sks */,
+				E5FDF47022386CFC00774703 /* CustomerLine.h */,
+				E5FDF47122386D0D00774703 /* CustomerLine.m */,
 				E57D41E72232192E0057E995 /* Customer.h */,
 				E57D41E5223219220057E995 /* Customer.m */,
 				E57D41E22231AC870057E995 /* Taco.h */,
@@ -296,6 +301,7 @@
 				E50F78382228AD0800C2B2D8 /* GameScene.m in Sources */,
 				E50F783B2228AD0800C2B2D8 /* GameViewController.m in Sources */,
 				E57D41E42231AC930057E995 /* Taco.m in Sources */,
+				E5FDF47222386D0D00774703 /* CustomerLine.m in Sources */,
 				E50F78462228AD0800C2B2D8 /* main.m in Sources */,
 				E50F78312228AD0800C2B2D8 /* AppDelegate.m in Sources */,
 				E5FED370222F3E7200055796 /* Player.m in Sources */,

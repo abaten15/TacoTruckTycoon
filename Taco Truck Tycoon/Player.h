@@ -59,6 +59,9 @@ typedef enum : NSUInteger {
 - (void) addTomatoeToTaco;
 - (void) addSauceToTaco;
 
+@property (nonatomic) 
+- (void) sellTacoToCustomer;
+
 @end
 
 #endif /* Player_h */

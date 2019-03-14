@@ -18,6 +18,7 @@ typedef enum : NSUInteger {
     SAUCE,
 } Ingredients;
 
+#define NUMBER_OF_TACO_TYPES 6
 #define STANDARD_TACO_ARRAY @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE]]
 #define EVERYTHING_TACO_ARRAY @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:LETTUCE], [NSNumber numberWithInteger:TOMATOE], [NSNumber numberWithInteger:SAUCE]]
 #define MEATLOVERS_TACO_ARRAY @[[NSNumber numberWithInteger:BEEF], [NSNumber numberWithInteger:SAUCE]]
@@ -34,13 +35,19 @@ typedef enum : NSUInteger {
     VEGAN_TACO,
 } TacoType;
 
+#define ORDERING_LOCATION CGPointMake(-17, 111)
+#define CUSTOMER_SPEED 20
+
 @interface Customer : SKSpriteNode
 
-- (void) setIngredients:(NSArray *)ingredients;
-
 @property (nonatomic) NSArray *ingredients;
+- (void) setIngredients:(NSArray *)ingredients;
+- (BOOL) ingredientsMatch:(NSArray *)ingredientsIn;
 
-- (void) onCreate;
+- (void) onCreate:(CGPoint) goTo;
+- (void) moveDown:(CGPoint) location;
+
+@property (nonatomic) Customer *nextInLine;
 
 @end
 

@@ -61,7 +61,12 @@
 	[self addChild:_garbageButton];
 	
 	// Customers
-	_customerUpdateCooldown = 2.0;
+	_customerUpdateCooldown = 5.0;
+	_customerLine = [[CustomerLine alloc] init];
+	[_customerLine setMaxSize:3];
+	[_customerLine setNumCustomers:0];
+	[_customerLine setFrontOfTheLine:NULL];
+	[_customerLine addTo:self];
 	
 }
 
@@ -128,6 +133,7 @@
 	
     if (currentTime - _lastCustomerUpdate >= _customerUpdateCooldown) {
     	[self addCustomer];
+    	_lastCustomerUpdate = currentTime;
 	}
 	
 }
@@ -164,16 +170,17 @@
 
 // Customers
 - (void) addCustomer {
+
 	int customerImage = arc4random_uniform(3);
 	Customer *newCustomer;
-	if (customerImage == 0) {
+	if (customerImage >= 0) {
 		newCustomer = [Customer spriteNodeWithImageNamed:@"Customer"];
 	}
 	int tacoOrder = arc4random_uniform(6);
 	if (tacoOrder >= 0) {
-		[newCustomer setIngredients:STANDARD_TACO];
+		[newCustomer setIngredients:STANDARD_TACO_ARRAY];
 	}
-	
+	[_customerLine addToLine:newCustomer];
 	
 }
 
