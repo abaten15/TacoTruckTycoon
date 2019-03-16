@@ -59,7 +59,9 @@
 		goTo.y = goTo.y + (count * 50);
 		[temp moveDown:goTo];
 		temp = temp.nextInLine;
+		count ++;
 	}
+	[toBePopped removeFromParent];
 }
 
 @end

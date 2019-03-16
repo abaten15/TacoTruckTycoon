@@ -13,6 +13,7 @@
 #import <GameplayKit/GameplayKit.h>
 
 #import "Taco.h"
+#import "CustomerLine.h"
 
 #define PLAYER_GOTO_TORTILLA CGPointMake(-253, -15)
 #define PLAYER_GOTO_BEEF CGPointMake(-90, -15)
@@ -59,7 +60,7 @@ typedef enum : NSUInteger {
 - (void) addTomatoeToTaco;
 - (void) addSauceToTaco;
 
-@property (nonatomic) 
+@property (nonatomic) CustomerLine *line;
 - (void) sellTacoToCustomer;
 
 @end

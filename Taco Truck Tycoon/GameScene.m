@@ -67,6 +67,11 @@
 	[_customerLine setNumCustomers:0];
 	[_customerLine setFrontOfTheLine:NULL];
 	[_customerLine addTo:self];
+	_player.line = _customerLine;
+	
+	_recipes = [Recipes labelNodeWithText:@"Recipes"];
+	[_recipes onCreate];
+	[self addChild:_recipes];
 	
 }
 
@@ -99,6 +104,8 @@
 		[self customerButtonClicked];
 	} else if ([_garbageButton containsPoint:point]) {
 		[self garbageButtonClicked];
+	} else if ([_recipes containsPoint:point]) {
+		[_recipes toggle];
 	}
 	
 	NSLog(@"x: %d, y: %d\n", (int)point.x, (int)point.y);
@@ -177,8 +184,18 @@
 		newCustomer = [Customer spriteNodeWithImageNamed:@"Customer"];
 	}
 	int tacoOrder = arc4random_uniform(6);
-	if (tacoOrder >= 0) {
-		[newCustomer setIngredients:STANDARD_TACO_ARRAY];
+	if (tacoOrder == 0) {
+		[newCustomer setIngredients:STANDARD_TACO_ARRAY withText:@"Standard"];
+	} else if (tacoOrder == 1) {
+		[newCustomer setIngredients:EVERYTHING_TACO_ARRAY withText:@"Everything"];
+	} else if (tacoOrder == 2) {
+		[newCustomer setIngredients:MEATLOVERS_TACO_ARRAY withText:@"Meatlovers"];
+	} else if (tacoOrder == 3) {
+		[newCustomer setIngredients:SAUCEY_TACO_ARRAY withText:@"Saucey"];
+	} else if (tacoOrder == 4) {
+		[newCustomer setIngredients:VEGGIE_TACO_ARRAY withText:@"Veggie"];
+	} else if (tacoOrder == 5) {
+		[newCustomer setIngredients:VEGAN_TACO_ARRAY withText:@"Vegan"];
 	}
 	[_customerLine addToLine:newCustomer];
 	

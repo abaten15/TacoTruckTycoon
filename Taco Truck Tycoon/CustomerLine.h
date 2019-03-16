@@ -21,6 +21,8 @@
 
 - (void) addTo:(SKScene *)scene;
 - (void) addToLine:(Customer *)customerIn;
+
+@property (nonatomic) SKScene *myScene;
 - (void) popFromLine;
 
 @end

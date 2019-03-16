@@ -12,6 +12,7 @@
 #import "Player.h"
 #import "Customer.h"
 #import "CustomerLine.h"
+#import "Recipes.h"
 
 @interface GameScene : SKScene
 
@@ -24,6 +25,8 @@
 @property (nonatomic) SKSpriteNode *background;
 
 @property (nonatomic) Player *player;
+
+@property (nonatomic) Recipes *recipes;
 
 // Buttons
 @property (nonatomic) SKSpriteNode *tortillaButton;

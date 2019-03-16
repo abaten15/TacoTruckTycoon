@@ -20,6 +20,7 @@
 		E50F785B2228AD0800C2B2D8 /* Taco_Truck_TycoonUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E50F785A2228AD0800C2B2D8 /* Taco_Truck_TycoonUITests.m */; };
 		E57D41E42231AC930057E995 /* Taco.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D41E32231AC930057E995 /* Taco.m */; };
 		E57D41E6223219220057E995 /* Customer.m in Sources */ = {isa = PBXBuildFile; fileRef = E57D41E5223219220057E995 /* Customer.m */; };
+		E5D2A038223C9B1B0093BC65 /* Recipes.m in Sources */ = {isa = PBXBuildFile; fileRef = E5D2A037223C9B1B0093BC65 /* Recipes.m */; };
 		E5FDF47222386D0D00774703 /* CustomerLine.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FDF47122386D0D00774703 /* CustomerLine.m */; };
 		E5FED370222F3E7200055796 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = E5FED36F222F3E7200055796 /* Player.m */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,8 @@
 		E57D41E32231AC930057E995 /* Taco.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Taco.m; sourceTree = "<group>"; };
 		E57D41E5223219220057E995 /* Customer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Customer.m; sourceTree = "<group>"; };
 		E57D41E72232192E0057E995 /* Customer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Customer.h; sourceTree = "<group>"; };
+		E5D2A036223C98C90093BC65 /* Recipes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Recipes.h; sourceTree = "<group>"; };
+		E5D2A037223C9B1B0093BC65 /* Recipes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recipes.m; sourceTree = "<group>"; };
 		E5FDF47022386CFC00774703 /* CustomerLine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomerLine.h; sourceTree = "<group>"; };
 		E5FDF47122386D0D00774703 /* CustomerLine.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomerLine.m; sourceTree = "<group>"; };
 		E5FED36E222F3DD300055796 /* Player.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				E57D41E32231AC930057E995 /* Taco.m */,
 				E5FED36E222F3DD300055796 /* Player.h */,
 				E5FED36F222F3E7200055796 /* Player.m */,
+				E5D2A036223C98C90093BC65 /* Recipes.h */,
+				E5D2A037223C9B1B0093BC65 /* Recipes.m */,
 				E50F78362228AD0800C2B2D8 /* GameScene.h */,
 				E50F78372228AD0800C2B2D8 /* GameScene.m */,
 				E50F78392228AD0800C2B2D8 /* GameViewController.h */,
@@ -306,6 +311,7 @@
 				E50F78312228AD0800C2B2D8 /* AppDelegate.m in Sources */,
 				E5FED370222F3E7200055796 /* Player.m in Sources */,
 				E57D41E6223219220057E995 /* Customer.m in Sources */,
+				E5D2A038223C9B1B0093BC65 /* Recipes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

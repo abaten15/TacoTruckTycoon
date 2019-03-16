@@ -14,8 +14,13 @@
 
 }
 
-- (void) setIngredients:(NSArray *)ingredients {
+- (void) setIngredients:(NSArray *)ingredients withText:(NSString *)text{
 	_ingredients = ingredients;
+	SKLabelNode *label = [SKLabelNode labelNodeWithText:text];
+	[label setFontSize:20];
+	[label setFontName:@"AvenirNext-Bold"];
+	[label setPosition:CGPointMake(75, 0)];
+	[self addChild:label];
 }
 
 - (void) onCreate:(CGPoint)goTo {

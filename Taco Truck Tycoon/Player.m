@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Player.h"
+#import "CustomerLine.h"
 
 @implementation Player {
 
@@ -19,6 +20,7 @@
 	[self setSize:self.size];
 	[self setPosition:self.position];
 	self.speed = 12;
+	
 }
 
 - (void) goTo:(CGPoint)point looking:(CGFloat)angle withAction:(PlayerAction)playerAction {
@@ -96,8 +98,12 @@
 }
 
 - (void) sellTacoToCustomer {
-	if (_taco != NULL && ) {
-		[]
+	Customer *cust = _line.frontOfTheLine;
+	if (_taco != NULL &&
+		cust != NULL &&
+		[cust ingredientsMatch:[_taco getIngredientsList]]) {
+		[_line popFromLine];
+		[self dumpTaco];
 	}
 }
 
